@@ -5,9 +5,10 @@ class Combo:
         self.entree = entree
         self.side = side
         self.price = price
+
 def helper_drink(drink):
-    drink_price = {'soda': 1.95,'milk shake': 2.95,'tea': 2.15}
-    drink_code = {'s':'soda','ms':'milk shake','t':'tea'}
+    drink_price = {'soda': 1.95,'milk shake': 2.95,'tea': 2.15, 'water': 2.25}
+    drink_code = {'s':'soda','ms':'milk shake','t':'tea','w':'water'}
     drink_name = drink_code.get(drink)
     if drink_name is None:
         return None,None
@@ -57,8 +58,8 @@ def print_order(combo_list):
     print("Total: $",total)
 
 def print_menu():
-    drink_price = {'soda': 1.95,'milk shake': 2.95,'tea': 2.15}
-    drink_code = {'s':'soda','ms':'milk shake','t':'tea'}
+    drink_price = {'soda': 1.95,'milk shake': 2.95,'tea': 2.15,'water': 2.25}
+    drink_code = {'s':'soda','ms':'milk shake','t':'tea','w':'water'}
     entree_price = {'burger': 3.95,'cheese burger':4.45,'chicken fingers':4.95}
     entree_code = {'b':'burger','cb':'cheese burger','cf':'chicken fingers'}
     side_price = {'fries':1.95,'waffle fries':2.95,'tater tots':2.45,'side salad':2.25}
@@ -81,6 +82,9 @@ def print_menu():
         name = side_code[key]
         price = side_price[name]
         print(name+"("+key+"): " + "$"+str(price)+" ", end = "")
+    print()
+    print()
+    print("** Please enter the drinks, sides, and entrees in the code format (ex: cs for cheese burger, s for soda, f for fries) **")
 
 def main():
     print_menu()
